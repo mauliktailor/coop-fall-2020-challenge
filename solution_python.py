@@ -42,7 +42,7 @@ class EventSourcer():
         self.history_undo.append((num, sign))
 
     def bulk_undo(self, steps: int):
-        # to check out of bound
+        # to check out of bound condisttion
         if steps > len(self.history_undo):
             steps = len(self.history_undo)
         for i in range(steps):
