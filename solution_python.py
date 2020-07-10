@@ -29,6 +29,7 @@ class EventSourcer():
 
 
     def redo(self):
+        # to check out of bound
         if len(self.history_redo) == 0:
             return
         num, sign = self.history_redo[-1]
@@ -41,6 +42,7 @@ class EventSourcer():
         self.history_undo.append((num, sign))
 
     def bulk_undo(self, steps: int):
+        # to check out of bound
         if steps > len(self.history_undo):
             steps = len(self.history_undo)
         for i in range(steps):
